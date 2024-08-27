@@ -58,7 +58,7 @@ const Signin = () => {
       const xpassword=password;
       const gmail=email;
       const  {data} = await axios.post(
-        "/api/user/signin",
+        "http://127.0.0.1:8000/api/user/signin",
         {name, gmail, xpassword, userid },
         config
       );

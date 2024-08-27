@@ -30,7 +30,7 @@ const GroupChatModal = ({children}) => {
                 },
               };
 
-              const {data}= await axios.get(`/api/user?search=${query}`, config);
+              const {data}= await axios.get(`http://127.0.0.1:8000/api/user?search=${query}`, config);
               // console.log(data);
               setLoading(false);
               setSearchResult(data);
@@ -59,7 +59,7 @@ const GroupChatModal = ({children}) => {
                 },
               };
               // console.log("!@#");
-              const {data}=await axios.post("/api/group/create",{
+              const {data}=await axios.post("http://127.0.0.1:8000/api/group/create",{
                 name: groupChatName,
                 user: selectedUsers,
               },config);

@@ -36,7 +36,7 @@ const ChatBox = () => {
         if(selectedchat.members) a=1;
         const sender=xuser._id;
         const reciever= a===1 ?   selectedchat._id : (user._id);
-        const  {data} = await axios.get(`/api/chat/allmessage?senderid=${sender}&receiverid=${reciever}&isgroup=${a}`,config);
+        const  {data} = await axios.get(`http://127.0.0.1:8000/api/chat/allmessage?senderid=${sender}&receiverid=${reciever}&isgroup=${a}`,config);
           setmessage(data[0].messages);
           socket.emit('join chat', selectedchat._id);
         } catch (error) {
@@ -57,8 +57,8 @@ const ChatBox = () => {
         const reciever= a===1 ?  selectedchat._id : (user._id);
         const  {data} = await axios.get(
           `/api/chat/message?message=${newmessage}&senderid=${sender}&receiverid=${reciever}&isgroup=${a}`,config);
-          console.log(data);
-          console.log("!@#$%");
+          // console.log(data);
+          // console.log("!@#$%");
           socket.emit('new message', data);
           setmessage([...message, data]);
       } catch (error) {
@@ -89,7 +89,7 @@ const ChatBox = () => {
       console.log(socket);
       if (socket) {
         socket.on('message received', (newMessageReceived) => {
-          console.log("*&^%$#12345");
+          // console.log("*&^%$#12345");
           // if (!selectedchatcompare || selectedchatcompare._id !== newMessageReceived.chat._id) {
             // give notification
           // } else {

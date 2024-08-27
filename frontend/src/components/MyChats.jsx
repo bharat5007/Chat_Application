@@ -18,7 +18,7 @@ const MyChats = () => {
         },
       };
       
-      const { data } = await axios.get("/api/chat/users", config);
+      const { data } = await axios.get("http://127.0.0.1:8000/api/chat/users", config);
       // console.log(data);
       setchats(data);
       // console.log(data);

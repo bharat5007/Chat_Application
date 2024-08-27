@@ -39,7 +39,7 @@ const Login = () => {
         };
         const gmail=email;
         const  {data} = await axios.post(
-          "/api/user/login",
+          "http://127.0.0.1:8000/api/user/login",
           {gmail, password },
           config
         );

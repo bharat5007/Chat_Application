@@ -43,6 +43,7 @@ const login=async(req,res)=>{
         if(!y) return res.status(400).json({msg: "User does not exist"});
         
         const iscorrectpassword = await bcrypt.compare(password, y[0]?.password);
+        console.log(password);
         
         if(!iscorrectpassword) return res.status(400).json({msg: "Incorrect Password"});
         return res.status(200).json({

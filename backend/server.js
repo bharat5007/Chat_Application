@@ -9,6 +9,7 @@ const app=express();
 connectdb();
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/user',userroutes);
 app.use('/api/group',grouproutes);
